@@ -23,7 +23,7 @@ header{
 
 nav{
     grid-area: nav;
-    background-color: aqua;
+    background-color: chartreuse;
 }
 .navbar div {
     margin-top: 330px;
@@ -40,6 +40,11 @@ nav{
 }
 .navbar{
     display: flex;
+}
+.button{
+    max-height: 20px;
+    margin-left: 20%;
+    margin-top: 15%;
 }
 
 
