@@ -23,29 +23,7 @@ nav{
     grid-area: nav;
     background-color: chartreuse;
 }
-.min-navbar div {
-    margin-top: 330px;
-}
-.min-navbar ul{
-    list-style: none;
-    display: flex;
-}
-.min-navbar li > a {
-    color: #fff;
-    text-decoration: none;
-    display: inline-block;
-    padding: 10px;
-}
-.min-navbar{
-    display: flex;
-    justify-content: left;
-}
 
-#min-knapp {
-    display: flex;
-    justify-content: center;
-    margin-top: 125px;
-}
 
 
 main{
