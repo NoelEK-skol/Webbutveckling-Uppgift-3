@@ -19,34 +19,33 @@ header{
     text-align: center;
 }
 
-
-
 nav{
     grid-area: nav;
     background-color: chartreuse;
 }
-.navbar div {
+.min-navbar div {
     margin-top: 330px;
 }
-.navbar ul{
+.min-navbar ul{
     list-style: none;
     display: flex;
 }
-.navbar a{
+.min-navbar li > a {
     color: #fff;
     text-decoration: none;
     display: inline-block;
     padding: 10px;
 }
-.navbar{
+.min-navbar{
     display: flex;
-}
-.button{
-    max-height: 20px;
-    margin-left: 20%;
-    margin-top: 15%;
+    justify-content: left;
 }
 
+#min-knapp {
+    display: flex;
+    justify-content: center;
+    margin-top: 125px;
+}
 
 
 main{
