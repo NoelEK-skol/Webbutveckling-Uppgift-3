@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" class="theme">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,31 +14,44 @@
 <body>
     <div class="container">
         <header>
-            <h1 class="title is-1">AAAAA</h1>
+            <h1 class="title is-1">Vemdalen</h1>
         </header>
         <nav>
-            <div class="min-navbar">
-
-                <div id="navbarBasicExample" class="navbar-menu">
+            <h1 class="title is-1" id="ResTillFjällenText">Res till fjällen i vinter</h1>
+            <div  id="LäsMerKnapp"><a href="LäsMer.HTML"><button class="button">Läs mer</button></a></div>
+                <div id="navbarBasic" class="navbar-menu">
                     <div class="navbar-start">
-                        <a class="navbar-item">
+                      <a class="navbar-item" href="hem.HTML">
+                        Hem
+                      </a>
+                        <a class="navbar-item" href="PriserBiljetter.HTML">
                             Priser & Biljetter
                           </a>
-                          <a class="navbar-item">
+                          <a class="navbar-item" href="Utforska.HTML">
                             Utforska området
                           </a>
-                          <a class="navbar-item">
+                          <a class="navbar-item" href="LäsMer.HTML">
                             Läs mer
                           </a>
                     </div>
-                </div>
-                
-              
             </div>
-            <div  id="min-knapp"><a href="LäsMer.HTML"><button class="button">Läs mer</button></a></div>
         </nav>
-        <main>Main</main>
+        <main>
+          <button class="button is-black mt-4 ml-2" id="themeBtn">Theme</button>
+          <figure class="image is-128x128">
+            <img src="https://www.skistar.com/globalassets/bilder-nya-skistar.com/skidakning-och-sno/trysil-skidakning-familj-sol.jpg?width=924&height=521&mode=crop&quality=80" />
+          </figure>
+        </main>
         <footer>Footer</footer>
     </div>
-</body>Priser & Biljetter, Utforska området, Läs mer
+
+    <script>
+       themeBtn.onclick = () => {
+        const h = document.getElementsByClassName("theme")[0];
+        h.classList.toggle("theme-dark");
+        h.classList.toggle("theme-light");
+    };
+    </script>
+
+</body>
 </html> 

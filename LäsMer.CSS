@@ -3,7 +3,7 @@
     min-height: 100vh;
     min-width: 100vw;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 80px 600px 1100px 200px;
+    grid-template-rows: 80px 60px 1100px 200px;
     grid-template-areas: 
     "header header header header"
     "nav nav nav nav"
@@ -15,37 +15,33 @@
 
 header{
     grid-area: header;
-    background-color: lightslategray;
+    background-color: whitesmoke;
     text-align: center;
 }
 
 nav{
     grid-area: nav;
     background-color: chartreuse;
-    background-image: url(https://www.idrefjall.se/globalassets/bilder/skidakning/alpint/privatlektion-alpint.jpg);
+    background-image: url();
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
 }
 
-#ResTillFjällenText{
-    margin-left: 720px;
-    margin-top: 150px;
-}
 
 #navbarBasic {
-    margin-top: 250px;
+    padding-top: 10px;
 }
 
 #LäsMerKnapp{
-    margin-left: 900px;
-    margin-top: 60px;
+    padding-left: 900px;
+    padding-top: 60px;
 }
 
 
 main{
     grid-area: main;
-    background-color: gray;
+    background-color: blue;
 }
 
 
