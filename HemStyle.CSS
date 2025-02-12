@@ -3,7 +3,7 @@
     min-height: 100vh;
     min-width: 100vw;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 80px 600px 1100px 200px;
+    grid-template-rows: 80px 600px 1100px 300px;
     grid-template-areas: 
     "header header header header"
     "nav nav nav nav"
@@ -47,7 +47,7 @@ main{
     grid-area: main;
     background-color: gray;
     padding-left: 1%;
-    padding-right: 1%;
+    padding-right: 2%;
 }
 
 .column img {
@@ -60,4 +60,5 @@ main{
 footer{
     grid-area: footer;
     background-color: brown;
+    text-align: center;
 }
