@@ -55,7 +55,14 @@ main{
     height: 300px;
 }
 
+.card{
+    max-height: 84px;
+}
 
+.PistKarta img{
+    min-height: 400px;
+    min-width: 300px;
+}
 
 footer{
     grid-area: footer;
