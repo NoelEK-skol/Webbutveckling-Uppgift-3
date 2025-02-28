@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+</head>
+<body>
+    <header>
+        <h1 class="title is-1 has-text-centered">Vemdalen</h1>
+      </header>
+      <nav>
+        <div id="navbarBasic" class="navbar-menu">
+          <div class="navbar-start">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+              <div class="navbar-brand">
+                <a class="navbar-item" href="hem.HTML">
+                  <img src="vector-home-icon-symbol-sign-removebg-preview.png" alt="">
+                  Hem
+                </a>
+              </div>
+            </nav>
+            <a class="navbar-item" href="PriserBiljetter.HTML">
+              Priser & Biljetter
+            </a>
+            <a class="navbar-item" href="Utforska.HTML">
+              Utforska området
+            </a>
+            <a class="navbar-item" href="LäsMer.HTML">
+              Läs mer
+            </a>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column is-half">
+                <input class="input" type="text" placeholder="Namn">
+                <input class="input" type="email" placeholder="Epost">
+                <p class="help is-danger">Denna Epost är ej giltlig</p>
+                <div class="select">
+                    <select>
+                        <option>Uthyrning</option>
+                        <option>Skidor & Pjäxor</option>
+                        <option>Skidor</option>
+                        <option>Snowboard & Skor</option>
+                        <option>Snowboard</option>
+                    </select>
+                    <div class="field">
+                        <div class="control">
+                          <label class="checkbox">
+                            <input type="checkbox">
+                            I agree to the <a href="#">terms and conditions</a>
+                          </label>
+                        </div>
+                      </div>
+                </div>
+                <div class="field is-grouped">
+                    <div class="control">
+                      <button class="button is-link">Submit</button>
+                    </div>
+                    <div class="control">
+                      <button class="button is-link is-light">Cancel</button>
+                    </div>
+                  </div>
+            </div>
+            <div class="column"></div>
+        </div>
+      </main>
+</body>
+</html>

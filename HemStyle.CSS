@@ -66,6 +66,5 @@ main{
 
 footer{
     grid-area: footer;
-    background-color: brown;
-    text-align: center;
+   
 }
