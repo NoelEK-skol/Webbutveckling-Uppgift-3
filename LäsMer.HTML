@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="sv" class="theme">
 
 <head>
   <meta charset="UTF-8">
@@ -39,20 +39,22 @@
 
     <main>
       <div class="columns">
-        <div class="column"></div>
+        <div class="column"><button class="button is-black mt-4 ml-2" id="themeBtn">Theme</button></div>
         <div class="column is-half has-background-light">
           <p class="subtitle is-5 p-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi at ducimus rerum quibusdam tempora odio beatae corrupti ratione nam nostrum possimus hic veniam voluptatum, nemo porro aliquam ut dignissimos tempore consectetur amet quisquam dolor! At quae tempora itaque dicta deleniti, molestiae possimus, quisquam quo illum, illo eum harum ducimus quia modi nemo aspernatur voluptatibus ea odit? Nisi enim eius perspiciatis laborum, dolore, eligendi et aspernatur numquam maxime eos minus, doloribus nam labore explicabo. Architecto fuga nulla id unde fugit accusantium. Aliquid ad obcaecati, delectus aliquam eos sint dolorum similique voluptas dolor aut perferendis labore nesciunt iure. Quaerat impedit fuga, nostrum quidem eveniet nulla dolores praesentium hic libero odio nobis rem ex magni. Aliquam veniam magni officia, facilis voluptatum, nemo praesentium deleniti at iusto cumque a beatae iure autem omnis alias cupiditate incidunt numquam necessitatibus pariatur, optio itaque. Debitis, beatae sapiente. Quasi accusantium soluta, nostrum consequuntur sapiente reprehenderit nemo ad at molestiae, tempora amet est. Vero voluptatum incidunt nisi quaerat minus blanditiis quia aliquid sint! Nostrum, in? Quos, ullam laborum. Laudantium labore quia impedit itaque aut voluptate, dignissimos incidunt? Dignissimos voluptatibus earum dicta facilis labore quas provident quos officia tempora? Consequatur nisi harum earum obcaecati delectus eos blanditiis, rem nobis tempora perspiciatis nemo cupiditate, incidunt praesentium molestiae repellat. Cupiditate sequi quasi tempore voluptas neque nulla aliquid veniam eveniet cumque placeat. Esse odit dolores, quibusdam tempore maxime neque, facere, totam eius aut ea commodi nemo qui temporibus unde deleniti! Est dolorum nam perferendis nihil quaerat temporibus porro, beatae similique blanditiis optio non expedita odio rem ipsam asperiores adipisci fuga necessitatibus repudiandae sunt eum quos sapiente. Quo alias eius, similique repellendus eveniet labore iusto odit nihil quos consectetur ratione molestias delectus? Quod fugit quasi odio rem cumque fuga voluptas nam eos ad cum quae corporis impedit tempore assumenda in officiis, ut et eius! Labore commodi ab maxime nisi facere libero asperiores iste minus. Ipsum architecto at blanditiis quae fuga? Veritatis ad provident hic soluta deserunt dolor dolore dolores fugit recusandae dignissimos! Beatae, corporis veritatis enim ipsam officiis voluptates. Quae quibusdam, deleniti recusandae, dolore dolorum officia maxime obcaecati in libero quisquam reiciendis earum voluptates sit ipsum nihil odio repellat illo quasi accusamus atque voluptatibus. Quia obcaecati laudantium hic sit totam vero voluptas ratione cupiditate eligendi ab eaque repudiandae similique odit saepe perspiciatis fugit unde molestiae voluptatum dolorum omnis, assumenda porro? Saepe nulla ipsa nesciunt accusantium quae possimus, repellendus omnis, quos explicabo corporis, amet minima?</p>
         </div>
         <div class="column"></div>
       </div>
       <br><br><br>
-    
 
       <div class="columns">
         <div class="column"></div>
         <div class="column is-half">
           <h1 class="title is-3 has-text-centered">Förboka din utrustning</h1>
           <p class="subtitle is-5 has-text-centered">Du kan boka din utrustning fram till tre dagar före ankomst, därefter hyr du på plats. När du förbokar din utrustning står den färdigställd i uthyrningen på Vemdalstorget</p>
+          <a href="formulär.HTML">
+            <p class="has-text-centered">Boka idag!</p>
+          </a>
         </div>
         <div class="column"></div>
       </div>
@@ -65,6 +67,14 @@
       <p class="subtitle is-5 has-text-centered">Om Vemdalen, Hållbarhetsarbete i Vemdalen, Press & media</p>
     </footer>
   </div>
+
+  <script>
+    themeBtn.onclick = () => {
+      const h = document.getElementsByClassName("theme")[0];
+      h.classList.toggle("theme-dark");
+      h.classList.toggle("theme-light");
+    };
+  </script>
 </body>
 
 </html>
