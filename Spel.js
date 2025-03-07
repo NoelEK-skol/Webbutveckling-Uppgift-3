@@ -62,4 +62,3 @@ function play() {
       } else {
         // Collision detection with skidor and pipes
         if (
- 
