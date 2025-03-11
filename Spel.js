@@ -11,6 +11,10 @@ let obstacles = [];
 let gameOver = false;
 let poäng = 0;
 
+
+const obstacleImage = new Image();
+obstacleImage.src = 'körsakta.png';
+
 // Spelar input
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft' && skidor.x > 0) skidor.x -= skidor.speed;
@@ -20,7 +24,7 @@ document.addEventListener('keydown', (e) => {
 
 // Spawn obstacles
 function spawnObstacle() {
-  obstacles.push({ x: Math.random() * 350, y: -20, width: 50, height: 20 });
+  obstacles.push({ x: Math.random() * 350, y: -20, width: 80, height: 90 });
 }
 
 // Update game state
@@ -38,7 +42,7 @@ function updateGame() {
     if (
       skidor.x < obstacle.x + obstacle.width &&
       skidor.x + skidor.width > obstacle.x &&
-      skidor.y < obstacle.y + obstacle.height &&
+      skidor.y < obstacle.y + obstacle.height -50 &&         // ändra hitboxen i y led
       skidor.y + skidor.height > obstacle.y
     ) {
       gameOver = true;
@@ -54,9 +58,8 @@ function renderGame() {
   ctx.textAlign = 'center';
   ctx.fillText('⛷️', skidor.x + skidor.width / 2, skidor.y + skidor.height);
 
-  ctx.fillStyle = 'red';
   obstacles.forEach((obstacle) => {
-    ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+    ctx.drawImage(obstacleImage, obstacle.x, obstacle.y, obstacle.width, obstacle.height);
   });
 
   ctx.fillStyle = 'black';
