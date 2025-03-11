@@ -1,64 +1,92 @@
+// Select the canvas and get the context
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
 
-// Background scrolling speed
-let move_speed = 3;
-  
+// Set canvas dimensions
+canvas.width = 400;
+canvas.height = 600;
 
-  
-// Getting reference to the skidor element
-let skidor = document.querySelector('.skidor');
-  
-// Getting skidor element properties
-let skidor_props = skidor.getBoundingClientRect();
-let background =
-    document.querySelector('.background')
-            .getBoundingClientRect();
-  
-// Getting reference to the score element
-let score_val =
-    document.querySelector('.score_val');
-let message =
-    document.querySelector('.message');
-let score_title =
-    document.querySelector('.score_title');
-  
-// Setting initial game state to start
-let game_state = 'Start';
-  
-// Add an eventlistener for key presses
+// Game variables
+let skidor = { x: 185, y: 500, width: 30, height: 30, speed: 5 };
+let obstacles = [];
+let gameOver = false;
+let score = 0;
+
+// Listen for player input
 document.addEventListener('keydown', (e) => {
-  
-  // Start the game if enter key is pressed
-  if (e.key == 'Enter' &&
-      game_state != 'Play') {
-    document.querySelectorAll('.pipe_sprite')
-              .forEach((e) => {
-      e.remove();
-    });
-    skidor.style.top = '40vh';
-    game_state = 'Play';
-    message.innerHTML = '';
-    score_title.innerHTML = 'Score : ';
-    score_val.innerHTML = '0';
-    play();
-  }
+  if (e.key === 'ArrowLeft' && skidor.x > 0) skidor.x -= skidor.speed;
+  if (e.key === 'ArrowRight' && skidor.x < canvas.width - skidor.width) skidor.x += skidor.speed;
+  if ((e.key === 'r' || e.key === 'R') && gameOver) resetGame();
 });
-function play() {
-  function move() {
-    
-    // Detect if game has ended
-    if (game_state != 'Play') return;
-    
-    // Getting reference to all the pipe elements
-    let pipe_sprite = document.querySelectorAll('.pipe_sprite');
-    pipe_sprite.forEach((element) => {
-      
-      let pipe_sprite_props = element.getBoundingClientRect();
-      skidor_props = skidor.getBoundingClientRect();
-      
-      // Delete the pipes if they have moved out
-      // of the screen hence saving memory
-      if (pipe_sprite_props.top <= 0) {
-        element.remove();
-      } else {
-        // Collision detection with skidor and pipes
-        if (
+
+// Spawn obstacles
+function spawnObstacle() {
+  obstacles.push({ x: Math.random() * 350, y: -20, width: 50, height: 20 });
+}
+
+// Update game state
+function updateGame() {
+  if (gameOver) return;
+
+  if (Math.random() < 0.02) spawnObstacle();
+
+  obstacles.forEach((obstacle, i) => {
+    obstacle.y += 3;
+    if (obstacle.y > canvas.height) {
+      obstacles.splice(i, 1);
+      score++;
+    }
+    if (
+      skidor.x < obstacle.x + obstacle.width &&
+      skidor.x + skidor.width > obstacle.x &&
+      skidor.y < obstacle.y + obstacle.height &&
+      skidor.y + skidor.height > obstacle.y
+    ) {
+      gameOver = true;
+    }
+  });
+}
+
+// Render the game
+function renderGame() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.font = '30px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText('⛷️', skidor.x + skidor.width / 2, skidor.y + skidor.height);
+
+  ctx.fillStyle = 'red';
+  obstacles.forEach((obstacle) => {
+    ctx.fillRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
+  });
+
+  ctx.fillStyle = 'black';
+  ctx.font = '20px Arial';
+  ctx.fillText(`Score: ${score}`, 50, 30);
+
+  if (gameOver) {
+    ctx.font = '40px Arial';
+    ctx.fillText('Game Over', canvas.width / 2, canvas.height / 2);
+    ctx.font = '20px Arial';
+    ctx.fillText('Starta om: Tryck "R"', canvas.width / 2, canvas.height / 2 + 40);
+  }
+}
+
+// Reset the game
+function resetGame() {
+  skidor = { x: 185, y: 500, width: 30, height: 30, speed: 5 };
+  obstacles = [];
+  gameOver = false;
+  score = 0;
+  requestAnimationFrame(gameLoop);
+}
+
+// Main game loop
+function gameLoop() {
+  updateGame();
+  renderGame();
+  if (!gameOver) requestAnimationFrame(gameLoop);
+}
+
+// Start the game
+requestAnimationFrame(gameLoop);

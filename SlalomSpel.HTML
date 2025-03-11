@@ -7,6 +7,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
     <link rel="stylesheet" href="SlalomSpel.CSS">
+    <style>
+        body { text-align: center; margin: 0; overflow: hidden; }
+        canvas { display: block; margin: 0 auto; background: lightgray; }
+    </style>
 </head>
 
 <body>
@@ -38,15 +42,7 @@
         </div>
     </nav>
 
-    <div class="background"></div>
-    <img class="skidor" src="png-clipart-skiing-child-skiing-winter-sport-removebg-preview.png" alt="">
-    <div class="message">
-        Tryck Enter för att starta
-    </div>
-    <div class="score">
-        <span class="score_title"></span>
-        <span class="score_val"></span>
-    </div>
+    <canvas id="gameCanvas"></canvas>
     <script src="Spel.js"></script>
 </body>
 
