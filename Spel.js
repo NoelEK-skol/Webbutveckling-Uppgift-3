@@ -1,18 +1,17 @@
-// Select the canvas and get the context
+// Välj canvas och få context
 const canvas = document.getElementById('gameCanvas');
 const ctx = canvas.getContext('2d');
 
-// Set canvas dimensions
+// Canvas / spel fönster
 canvas.width = 400;
 canvas.height = 600;
 
-// Game variables
 let skidor = { x: 185, y: 500, width: 30, height: 30, speed: 5 };
 let obstacles = [];
 let gameOver = false;
-let score = 0;
+let poäng = 0;
 
-// Listen for player input
+// Spelar input
 document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft' && skidor.x > 0) skidor.x -= skidor.speed;
   if (e.key === 'ArrowRight' && skidor.x < canvas.width - skidor.width) skidor.x += skidor.speed;
@@ -34,7 +33,7 @@ function updateGame() {
     obstacle.y += 3;
     if (obstacle.y > canvas.height) {
       obstacles.splice(i, 1);
-      score++;
+      poäng++;
     }
     if (
       skidor.x < obstacle.x + obstacle.width &&
@@ -47,7 +46,7 @@ function updateGame() {
   });
 }
 
-// Render the game
+// Rendera spelet
 function renderGame() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -62,7 +61,7 @@ function renderGame() {
 
   ctx.fillStyle = 'black';
   ctx.font = '20px Arial';
-  ctx.fillText(`Score: ${score}`, 50, 30);
+  ctx.fillText(`Poäng: ${poäng}`, 50, 30);
 
   if (gameOver) {
     ctx.font = '40px Arial';
@@ -72,12 +71,12 @@ function renderGame() {
   }
 }
 
-// Reset the game
+// Reseta spelet
 function resetGame() {
   skidor = { x: 185, y: 500, width: 30, height: 30, speed: 5 };
   obstacles = [];
   gameOver = false;
-  score = 0;
+  poäng = 0;
   requestAnimationFrame(gameLoop);
 }
 
@@ -88,5 +87,5 @@ function gameLoop() {
   if (!gameOver) requestAnimationFrame(gameLoop);
 }
 
-// Start the game
+// Starta spelet
 requestAnimationFrame(gameLoop);

@@ -1,0 +1,16 @@
+header {
+    grid-area: header;
+    background-color: lightslategray;
+    text-align: center;
+}
+
+body {
+    text-align: center; 
+    margin: 0; 
+    overflow: hidden;
+}
+
+canvas { display: block;
+    margin: 0 auto;
+    background: snow; 
+}
